@@ -6,7 +6,10 @@ const mode = process.env.NODE_ENV || "development";
 const target = process.env.NODE_ENV === "production" ? "browserslist" : "web";
 
 module.exports = {
-  mode: mode,
+  mode: "production",
+  resolve: {
+    fallback: { "path": require.resolve("path-browserify") }
+  },
 
   plugins: [new MiniCssExtractPlugin()],
 
@@ -37,4 +40,5 @@ module.exports = {
   devServer: {
     contentBase: "./dist",
   },
+    
 };
