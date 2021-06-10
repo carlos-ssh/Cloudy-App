@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-env node */
 module.exports = {
     "env": {
         "browser": true,
