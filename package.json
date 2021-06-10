@@ -17,7 +17,8 @@
     "browserslist": "^4.16.6",
     "jquery": "^3.6.0",
     "mini-css-extract-plugin": "^1.6.0",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "autoprefixer": "^6.5.4"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -42,5 +43,11 @@
   "bugs": {
     "url": "https://github.com/carlos-ssh/Cloudy-App/issues"
   },
+  "private": true,
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "IE 10"
+  ],
   "homepage": "https://github.com/carlos-ssh/Cloudy-App#readme"
 }
