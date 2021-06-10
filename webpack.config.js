@@ -1,51 +1,49 @@
-const webpack = require('webpack');
-const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-const config = {
-  entry: './src/index.ts',
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'main.js'
-  },
+const mode = process.env.NODE_ENV || "development";
+// Temporary workaround for 'browserslist' bug that is being patched in the near future
+const target = process.env.NODE_ENV === "production" ? "browserslist" : "web";
+
+module.exports = {
+  // mode defaults to 'production' if not set
+  mode: mode,
+
+  // entry not required if using `src/index.js` default
+  // output not required if using `dist/main.js` default
+
+  plugins: [new MiniCssExtractPlugin()],
+
   module: {
     rules: [
       {
-        test: /\.js$/,
-        use: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/,
+        test: /\.(s[ac]|c)ss$/i,
         use: [
-          'style-loader',
-          'css-loader'
-        ]
+          // could replace the next line with "style-loader" here for inline css
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          // according to the docs, sass-loader should be at the bottom, which
+          // loads it first to avoid prefixes in your sourcemaps and other issues.
+          "sass-loader",
+        ],
       },
       {
-        test: /\.ts(x)?$/,
-        loader: 'ts-loader',
-        exclude: /node_modules/
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          // without additional settings, this will reference .babelrc
+          loader: "babel-loader",
+        },
       },
-      {
-        test: /\.svg$/,
-        use: 'file-loader'
-      }
-    ]
+    ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      appMountId: 'app',
-      filename: 'index.html'
-    })
-  ],
-  resolve: {
-    extensions: [
-      '.tsx',
-      '.ts',
-      '.js'
-    ]
-  }
-};
 
-module.exports = config;
+  // defaults to "web", so only required for webpack-dev-server bug
+  target: target,
+  devtool: "source-map",
+
+  // required if using webpack-dev-server
+  devServer: {
+    contentBase: "./dist",
+  },
+};
