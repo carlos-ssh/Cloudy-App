@@ -1,6 +1,7 @@
 /* require('dotenv').config(); eslint-disable no-undef */
 
 
+
 let weather = {
     "appKey": "6e41735b91d06f5bc7408015f491a2c1",
     fetchWeather: function (city) {
