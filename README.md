@@ -8,7 +8,7 @@ The Weather App project comes at the end of the Asynchronous Javascript and APIs
 
 ## Live View
 
-[Watch Here!!](https://rawcdn.githack.com/carlos-ssh/Restaurant/5c53245a6602c660b9add527e547b8b4690e2344/dist/index.html)
+[Watch Here!!](https://carlos-ssh.github.io/Cloudy-App/)
 ## Technologies:
 - JavaScript
 - Webpack
