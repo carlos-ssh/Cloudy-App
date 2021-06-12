@@ -1,8 +1,8 @@
-/* eslint-disable no-undef */
-require('dotenv').config();
+/* require('dotenv').config(); eslint-disable no-undef */
+
 
 let weather = {
-    "appKey": process.env.API_KEY,
+    "appKey": "6e41735b91d06f5bc7408015f491a2c1",
     fetchWeather: function (city) {
         fetch(
             "http://api.openweathermap.org/data/2.5/weather?q="

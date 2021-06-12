@@ -1,44 +1,49 @@
 /* eslint-disable no-undef */
-/* eslint-env node */
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const webpack = require('webpack');
+const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
-const mode = process.env.NODE_ENV || "development";
-const target = process.env.NODE_ENV === "production" ? "browserslist" : "web";
-
-module.exports = {
-  mode: "production",
-  resolve: {
-    fallback: { "path": require.resolve("path-browserify") }
+const config = {
+  entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'main.js'
   },
-
-  plugins: [new MiniCssExtractPlugin()],
-
   module: {
     rules: [
       {
-        test: /\.(s[ac]|c)ss$/i,
-        use: [
-          MiniCssExtractPlugin.loader,
-          "css-loader",
-          "postcss-loader",
-          "sass-loader",
-        ],
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/
       },
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader",
-        },
+        test: /\.css$/,
+        use: [
+          'style-loader',
+          'css-loader'
+        ]
       },
-    ],
+      {
+        test: /\.ts(x)?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.svg$/,
+        use: 'file-loader'
+      }
+    ]
   },
+  
+  plugins: [new Dotenv()],
 
-  target: target,
-  devtool: "source-map",
-
-  devServer: {
-    contentBase: "./dist",
-  },
-    
+  resolve: {
+    extensions: [
+      '.tsx',
+      '.ts',
+      '.js'
+    ]
+  }
 };
+
+module.exports = config;
