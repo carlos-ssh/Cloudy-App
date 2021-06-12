@@ -3,7 +3,8 @@
 The Weather App project comes at the end of the Asynchronous Javascript and APIs section of the Javascript course. It tests the knowledge of the student about asynchronous communication with promises or async/await and when to use them. You can find the original project specification at: [HERE](https://www.theodinproject.com/courses/javascript/lessons/weather-app)
 
 
-![screenshot](./Resources/1.png)
+![screenshot](./resources/1.png)
+
 
 
 ## Live View
