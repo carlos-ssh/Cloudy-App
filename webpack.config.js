@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
+
 const path = require('path');
 const Dotenv = require('dotenv-webpack');
-
 
 const config = {
   entry: './src/index.js',
