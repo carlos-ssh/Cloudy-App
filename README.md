@@ -24,7 +24,7 @@ Run the following comands in the terminal in the next order:
   $ cd "here comes the path of your selected directory (double quotes must not be here)"
 
 - Step 2:
-  $ git clone https://github.com/carlos-ssh/restaurant.git
+  $ git clone https://github.com/carlos-ssh/cloudy-app.git
 
 
 ## Building and running on localhost
