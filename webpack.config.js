@@ -4,7 +4,7 @@ const path = require('path');
 const Dotenv = require('dotenv-webpack');
 
 const config = {
-  entry: './src/index.js',
+  entry: './src/index.js', 
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js'
@@ -36,7 +36,7 @@ const config = {
         test: /\.svg$/,
         use: 'file-loader'
       }
-    ]
+    ],
   },
   
   plugins: [new Dotenv()],
