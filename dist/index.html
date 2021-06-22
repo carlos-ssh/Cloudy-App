@@ -8,28 +8,38 @@
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap" rel="stylesheet"> 
         <link rel="stylesheet" href="style.css">
-        <title>Wheather App</title>
+        <title>🌦 Cloudy App</title>
     </head>
     <body>
-        <div class="card">
+        <!-- <div class="card">
             <div class="search mb-3">
-                <input type="text" class="search-bar" placeholder="Search a City" aria-label="Search" aria-describedby="button-addon2">
+                <input type="text" id="chkSwitch" class="search-bar" placeholder="Search a City" aria-label="Search" aria-describedby="button-addon2">
                 <button class="" type="button" id="button-addon2">
                     <i class="bi bi-search"></i>
                 </button>
             </div>
 
-            <div class="weather loading">
-                <h4 class="city"> Weather in Tulum</h4>
+            <div class="weather load">
+                <div class="container d-flex">
+                    <div class="container col-8">
+                        <h5 class="city content-city-name text-left py-2"></h5>
+                    </div>
+                    <div class="container d-flex col-4 mx-2 flex-row-reverse switch-group">
+                        <label class="switch"><input type="checkbox" checked><span class="slider round"></span><p class="">ºF</p></label>
+                        <label class="switch"><input type="checkbox" checked><span class="slider round"></span><p class="">ºC</p></label>
+                    </div>
+                    <div class="cel-or-fahr d-none">fahrenheit</div>
+                </div>
+
                 <div class="flex">
                     <img src="" alt="" class="icon">
-                    <h1 class="temp">32ºC</h1>
+                    <h1 class="temp content-city-temperature"></h1>
                 </div>
-                <div class="description">Cloudy</div>
-                <div class="humidity">Humidity: 80%</div>
-                <div class="wind">Wind Speed: 18 km/h</div>
+                <div class="description"></div>
+                <div class="humidity"></div>
+                <div class="wind"></div>
             </div>
-        </div>
+        </div> -->
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
         <script src="main.js" defer></script>
